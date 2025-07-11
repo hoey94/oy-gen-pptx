@@ -1,0 +1,51 @@
+identity:
+  name: oy-gen-pptx
+  author: oy_plat
+  label:
+    en_US: oy-gen-pptx
+    zh_Hans: oy-gen-pptx
+    pt_BR: oy-gen-pptx
+description:
+  human:
+    en_US: Generate a PowerPoint presentation based on the description and template
+    zh_Hans: Generate a PowerPoint presentation based on the description and template
+    pt_BR: Generate a PowerPoint presentation based on the description and template
+  llm: Generate a PowerPoint presentation based on the description and template
+parameters:
+  - name: llm_str
+    type: string
+    required: true
+    label:
+      en_US: llm string
+      zh_Hans: 大模型返回的数据
+    human_description:
+      en_US: ppt content
+      zh_Hans: ppt内容
+    llm_description: Generate a PowerPoint presentation based on the description and template
+    form: llm
+  - name: output_filename
+    type: string
+    required: false
+    label:
+      en_US: output filename
+      zh_Hans: 输出文件名
+    human_description:
+      en_US: output ppt file
+      zh_Hans: ppt输出名字
+    llm_description: Output file for ppt
+    form: llm
+  - name: pptx_demo
+    type: files
+    required: false
+    label:
+      en_US: ppt demo
+      zh_Hans: ppt母版
+    human_description:
+      en_US: ppt demo
+      zh_Hans: 自定义ppt母版
+    llm_description: input ppt demo
+    form: llm
+
+extra:
+  python:
+    source: tools/oy-gen-pptx.py

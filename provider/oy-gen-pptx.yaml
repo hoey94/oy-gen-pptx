@@ -1,0 +1,17 @@
+identity:
+  author: oy_plat
+  name: oy-gen-pptx
+  label:
+    en_US: oy-gen-pptx
+    zh_Hans: oy-gen-pptx
+    pt_BR: oy-gen-pptx
+  description:
+    en_US: Generate a PowerPoint presentation based on the description and template
+    zh_Hans: Generate a PowerPoint presentation based on the description and template
+    pt_BR: Generate a PowerPoint presentation based on the description and template
+  icon: icon.svg
+tools:
+  - tools/oy-gen-pptx.yaml
+extra:
+  python:
+    source: provider/oy-gen-pptx.py
