@@ -10,7 +10,7 @@ label:
 description:
   en_US: Generate a PowerPoint presentation based on the description and template
   ja_JP: Generate a PowerPoint presentation based on the description and template
-  zh_Hans: Generate a PowerPoint presentation based on the description and template
+  zh_Hans: 根据模板和描述生成PPT
   pt_BR: Generate a PowerPoint presentation based on the description and template
 icon: icon.svg
 resource:
