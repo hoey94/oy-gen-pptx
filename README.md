@@ -1,8 +1,8 @@
 ## oy-gen-pptx
 
-**Author:** ouyeel
-**Version:** 0.0.1
-**Type:** tool
+**Author:** oy_plat
+**Version:** 0.0.1  
+**Type:** tool  
 
 ### Description
 
