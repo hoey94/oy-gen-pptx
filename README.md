@@ -29,6 +29,11 @@
    - Required: false
    - Description: Custom PowerPoint template for the generated presentation.
 
-
+## Useage Example:
+1. **config flow**:
+   <img width="1439" height="776" alt="image" src="https://github.com/user-attachments/assets/eecd1c78-52d3-4506-bf8c-acd2f9006add" />
+2. **Enter prompt words and PPT master**：
+   <img width="1434" height="778" alt="image" src="https://github.com/user-attachments/assets/686b44d0-b083-416b-835c-b57efb407948" />
+ 
 
 
