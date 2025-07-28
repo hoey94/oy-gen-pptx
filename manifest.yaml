@@ -3,10 +3,10 @@ type: plugin
 author: oy_plat
 name: oy-gen-pptx
 label:
-  en_US: oy-gen-pptx
-  ja_JP: oy-gen-pptx
-  zh_Hans: oy-gen-pptx
-  pt_BR: oy-gen-pptx
+  en_US: Generate PPT
+  ja_JP: Generate PPT
+  zh_Hans: 生成PPT
+  pt_BR: Generate PPT
 description:
   en_US: Generate a PowerPoint presentation based on the description and template
   ja_JP: Generate a PowerPoint presentation based on the description and template
