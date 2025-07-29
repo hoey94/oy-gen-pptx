@@ -2,12 +2,12 @@ identity:
   author: oy_plat
   name: oy-gen-pptx
   label:
-    en_US: oy-gen-pptx
-    zh_Hans: oy-gen-pptx
-    pt_BR: oy-gen-pptx
+    en_US: Generate PPT
+    zh_Hans: 生成PPT
+    pt_BR: Generate PPT
   description:
     en_US: Generate a PowerPoint presentation based on the description and template
-    zh_Hans: Generate a PowerPoint presentation based on the description and template
+    zh_Hans: 根据模板和描述生成PPT
     pt_BR: Generate a PowerPoint presentation based on the description and template
   icon: icon.svg
 tools:

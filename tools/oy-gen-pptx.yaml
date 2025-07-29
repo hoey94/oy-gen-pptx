@@ -2,9 +2,9 @@ identity:
   name: oy-gen-pptx
   author: oy_plat
   label:
-    en_US: oy-gen-pptx
-    zh_Hans: oy-gen-pptx
-    pt_BR: oy-gen-pptx
+    en_US: Generate PPT
+    zh_Hans: 生成PPT
+    pt_BR: Generate PPT
 description:
   human:
     en_US: Generate a PowerPoint presentation based on the description and template
