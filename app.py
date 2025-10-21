@@ -89,3 +89,116 @@ def generate_slide_deck(json_str: str, ppt_demo_io: BytesIO | None) -> BytesIO |
 
     return blob
 
+def generate_pptx(pptx_json_str,output_file_name):
+     # 假设你已经有一个二进制的 PPTX 文件内容
+    with open("./pptx_templates/ouyeel-1.pptx", "rb") as f:
+        pptx_bytes = f.read()
+
+    # 使用 BytesIO 在内存中加载
+    pptx_stream = BytesIO(pptx_bytes)
+    
+    pptx_content = pptx_json_str
+    
+    blob = generate_slide_deck(json_str=pptx_content, ppt_demo_io=pptx_stream)
+    
+    if blob is None:
+        logger.error("Failed to generate slide deck; no output was produced.")
+    else:
+        # Support either BytesIO or raw bytes
+        out_path = f"./ppt/{output_file_name}.pptx"
+        try:
+            if isinstance(blob, BytesIO):
+                blob.seek(0)
+                with open(out_path, "wb") as out_f:
+                    out_f.write(blob.read())
+            elif isinstance(blob, (bytes, bytearray)):
+                with open(out_path, "wb") as out_f:
+                    out_f.write(blob)
+            else:
+                # Try to coerce via buffer interface
+                with open(out_path, "wb") as out_f:
+                    out_f.write(memoryview(blob).tobytes())
+            logger.info("Wrote slide deck to %s", out_path)
+        except Exception as ex:
+            logger.exception("Could not write PPTX to disk: %s", ex)
+    
+
+
+# if __name__ == '__main__':
+#     # 假设你已经有一个二进制的 PPTX 文件内容
+#     with open("./pptx_templates/ouyeel-1.pptx", "rb") as f:
+#         pptx_bytes = f.read()
+
+#     # 使用 BytesIO 在内存中加载
+#     pptx_stream = BytesIO(pptx_bytes)
+    
+#     pptx_content = """```json
+#                     {
+#                         "title": "Introduction to Python Programming",
+#                         "slides": [
+#                             {
+#                                 "heading": "Slide 1: Introduction",
+#                                 "bullet_points": [
+#                                     "Brief overview of Python and its importance",
+#                                     "Purpose of the tutorial"
+#                                 ]
+#                             },
+#                             {
+#                                 "heading": "Slide 2: Basic Data Types",
+#                                 "bullet_points": [
+#                                     "Strings (e.g. \"hello\")",
+#                                     "Integers (e.g. 42)",
+#                                     "Floats (e.g. 3.14)",
+#                                     "Booleans (e.g. True/False)",
+#                                     "Lists (e.g. [1, 2, 3])",
+#                                     "Tuples (e.g. (1, 2, 3))"
+#                                 ]
+#                             },
+#                             {
+#                                 "heading": "Slide 3: Strings",
+#                                 "bullet_points": [
+#                                     "String literals (e.g. \"hello\")",
+#                                     "String concatenation (e.g. \"hello\" + \" world\")",
+#                                     "String slicing (e.g. \"hello\"[0] = h)"
+#                                 ]
+#                             },
+#                             {
+#                                 "heading": "Slide 4: Integers",
+#                                 "bullet_points": [
+#                                     "Integer literals (e.g. 42)",
+#                                     "Arithmetic operations (e.g. 2 + 3 = 5)"
+#                                 ]
+#                             },
+#                             {
+#                                 "heading": "Slide 5: Floats",
+#                                 "bullet_points": [
+#                                     "Floating-point literals (e.g."
+#                                 ]
+#                             }
+#                         ]
+#                     }
+#                     ```
+#                     """
+    
+#     blob = generate_slide_deck(json_str=pptx_content, ppt_demo_io=pptx_stream)
+    
+#     if blob is None:
+#         logger.error("Failed to generate slide deck; no output was produced.")
+#     else:
+#         # Support either BytesIO or raw bytes
+#         out_path = "./output_python_intro.pptx"
+#         try:
+#             if isinstance(blob, BytesIO):
+#                 blob.seek(0)
+#                 with open(out_path, "wb") as out_f:
+#                     out_f.write(blob.read())
+#             elif isinstance(blob, (bytes, bytearray)):
+#                 with open(out_path, "wb") as out_f:
+#                     out_f.write(blob)
+#             else:
+#                 # Try to coerce via buffer interface
+#                 with open(out_path, "wb") as out_f:
+#                     out_f.write(memoryview(blob).tobytes())
+#             logger.info("Wrote slide deck to %s", out_path)
+#         except Exception as ex:
+#             logger.exception("Could not write PPTX to disk: %s", ex)

@@ -4,3 +4,4 @@ json_repair==0.29.2
 python-dotenv==1.1.1
 python_pptx==1.0.2
 Requests==2.32.4
+fastmcp==2.11.3
