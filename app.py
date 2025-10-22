@@ -89,9 +89,9 @@ def generate_slide_deck(json_str: str, ppt_demo_io: BytesIO | None) -> BytesIO |
 
     return blob
 
-def generate_pptx(pptx_json_str,output_file_name):
+def generate_pptx(template_name, pptx_json_str,output_file_name):
      # 假设你已经有一个二进制的 PPTX 文件内容
-    with open("./pptx_templates/ouyeel-1.pptx", "rb") as f:
+    with open(f"./pptx_templates/{template_name}.pptx", "rb") as f:
         pptx_bytes = f.read()
 
     # 使用 BytesIO 在内存中加载
