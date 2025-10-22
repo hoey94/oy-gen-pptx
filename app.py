@@ -126,7 +126,7 @@ def generate_pptx(template_name, pptx_json_str,output_file_name):
 
 # if __name__ == '__main__':
 #     # 假设你已经有一个二进制的 PPTX 文件内容
-#     with open("./pptx_templates/ouyeel-1.pptx", "rb") as f:
+#     with open("./pptx_templates/changlong.pptx", "rb") as f:
 #         pptx_bytes = f.read()
 
 #     # 使用 BytesIO 在内存中加载
@@ -186,7 +186,7 @@ def generate_pptx(template_name, pptx_json_str,output_file_name):
 #         logger.error("Failed to generate slide deck; no output was produced.")
 #     else:
 #         # Support either BytesIO or raw bytes
-#         out_path = "./output_python_intro.pptx"
+#         out_path = "./ppt/default.pptx"
 #         try:
 #             if isinstance(blob, BytesIO):
 #                 blob.seek(0)
